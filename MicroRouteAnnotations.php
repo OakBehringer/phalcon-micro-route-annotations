@@ -1,5 +1,7 @@
 <?php
 
+namespace PhalconExt;
+
 use Phalcon\Exception;
 use Phalcon\Loader;
 use Phalcon\Mvc\Micro;

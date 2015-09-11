@@ -16,7 +16,7 @@ $app = new Micro();
 
 // Create the micro route annotation object, passing the micro app into the constructor
 require_once '../MicroRouteAnnotations.php';
-$microAnno = new \MicroRouteAnnotations($app);
+$microAnno = new PhalconExt\MicroRouteAnnotations($app);
 // Add a directory of "controllers" that are not namespaced
 $microAnno->addControllerDirectory('non-namespaced-controllers');
 // Add a directory of "controllers" that are namespaced by including the namespace
