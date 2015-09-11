@@ -1,8 +1,20 @@
 # phalcon-micro-route-annotations
 
-This class allows you to use annotation based routing for your micro applications. The setup is very simple: Add a directory for your controllers (which may or may not extend the Phalcon MVC Controller class), and add some route annotations to the controller class. Annotation syntax follows the phalcon [annotations router](https://docs.phalconphp.com/en/latest/reference/routing.html#annotations-router).
+Phalcon Micro applications are awesome, but they can very quickly grow out of control. Adding collections helps, which allow you to encapsulate logic into classes, and then define routes based on those classes, but you then need to constantly keep your bootstrap file up to date: Any time you want to add a new class to your micro app, you must create and mount a collection, as well as routes for that collection, in your bootstrap file. 
 
-For example, the following will mount routes annotated on controllers in the namespaced-controllers directory:
+Wouldn't it be great if all that could be handled dynamically, without touching your bootstrap file? Simply create a new controller and blammo, it works. And wouldn't it be great if routes for that controller were defined in the same file, thus encapsulating all the controller's application and route logic in the same place? 
+
+This class allows you to use annotation based routing for your micro applications. The setup is very simple: Add a directory for  controller classes, and add some smiple route annotations to each controller. Annotation syntax follows the phalcon [annotations router](https://docs.phalconphp.com/en/latest/reference/routing.html#annotations-router).
+
+Notes: 
+
+* Controllers can, but do not need to extend the Phalcon MVC controller class
+* Classes/controllers without annotations are skipped. 
+* Methods in the parsed classes/controllers without annotations are skipped. 
+
+## Show me some code!
+
+The following will mount routes annotated on controllers in the `controllers` directory:
 
 ```
 // Create a basic Micro App
@@ -12,7 +24,7 @@ $app = new Phalcon\Mvc\Micro();
 $microAnno = new \MicroRouteAnnotations($app);
 
 // Add a directory of "controllers" that are namespaced
-$microAnno->addControllerNamespace('SomeNamespace', 'namespaced-controllers');
+$microAnno->addControllerNamespace('SomeNamespace', 'controllers');
 
 // Add the rotues to our micro app
 $microAnno->mount();
