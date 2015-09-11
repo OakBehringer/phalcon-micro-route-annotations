@@ -21,7 +21,7 @@ $microAnno = new \MicroRouteAnnotations($app);
 $microAnno->addControllerDirectory('non-namespaced-controllers');
 // Add a directory of "controllers" that are namespaced by including the namespace
 $microAnno->addControllerNamespace('SomeNamespace', 'namespaced-controllers');
-// This will
+// This will add the routes to the application
 $microAnno->mount();
 
 
