@@ -42,6 +42,8 @@ class Motorcycles {
 
 You would be able to call Motorcycles::getAll() by makinig a get request to /motos/get-them-all
 
+## Simple, Default Rest Routes
+
 You may also add the class annotation @RouteDefault('Rest') to automatically add routes for the following actions:
 
 **indexAction()**
