@@ -1,14 +1,14 @@
 # phalcon-micro-route-annotations
 
-Phalcon Micro applications are awesome, but they can very quickly grow out of control. Adding collections helps, which allow you to encapsulate logic into classes, and then define routes based on those classes, but you then need to constantly keep your bootstrap file up to date: Any time you want to add a new class to your micro app, you must create and mount a collection, as well as routes for that collection, in your bootstrap file. 
+Phalcon Micro applications are awesome, but they can very quickly grow out of control. Adding collections helps, allowing you to encapsulate logic into classes, and then define routes based on those classes, but you then need to constantly keep your bootstrap file up to date: Any time you want to add new functionality to your micro app, you must create and mount a collection, and/or update routes for methods that collection, all in your bootstrap file. Gross. 
 
 Wouldn't it be great if all that could be handled dynamically, without touching your bootstrap file? Simply create a new controller and blammo, it works. And wouldn't it be great if routes for that controller were defined in the same file, thus encapsulating all the controller's application and route logic in the same place? 
 
-This class allows you to use annotation based routing for your micro applications. The setup is very simple: Add a directory for  controller classes, and add some smiple route annotations to each controller. Annotation syntax follows the phalcon [annotations router](https://docs.phalconphp.com/en/latest/reference/routing.html#annotations-router).
+This class allows you to use annotation based routing for your micro applications. The setup is very simple: Add a directory for  controller classes, and add some simple route annotations to each controller. Annotation syntax follows the phalcon [annotations router](https://docs.phalconphp.com/en/latest/reference/routing.html#annotations-router).
 
 Notes: 
 
-* Controllers can, but do not need to extend the Phalcon MVC controller class
+* Controllers can, but do not need to extend the Phalcon MVC controller class.
 * Classes/controllers without annotations are skipped. 
 * Methods in the parsed classes/controllers without annotations are skipped. 
 
